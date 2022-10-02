@@ -1,0 +1,12 @@
+name: TownyResourcePack
+description: Set a resource pack for your town so that everyone gets to see your beautiful constructions just like you!
+author: Senkoco
+main: me.senkoco.townyresourcepacks.Main
+version: 1.0.0-SNAPSHOT
+api-version: 1.19
+depend: [Towny]
+permissions:
+  townyresourcepacks.set:
+    description: Can a mayor set the resource pack for their town?
+  townyresourcepacks.clear:
+    dsecription: Can a mayor clear the resource pack for their town?
