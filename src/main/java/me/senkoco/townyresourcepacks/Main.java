@@ -8,10 +8,14 @@ import me.senkoco.townyresourcepacks.listeners.PlayerExitTown;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
+    public static Main instance;
+
     @Override
     public void onEnable() {
         getLogger().info("Plugin enabled!");
         registerCommandsAndListeners();
+
+        instance = this;
     }
 
     private void registerCommandsAndListeners(){
@@ -19,4 +23,6 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerExitTown(), this);
         getServer().getPluginManager().registerEvents(new PlayerEnterTown(), this);
     }
+
+    public static Main getInstance() { return instance; }
 }
