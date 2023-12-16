@@ -3,6 +3,7 @@ package me.cocolennon.townyresourcepacks.commands;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
+import me.cocolennon.townyresourcepacks.utils.metadata.MetaData;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.setResourcePackLink;
 
 public class CommandResourcePack implements CommandExecutor {
     @Override
@@ -41,15 +40,16 @@ public class CommandResourcePack implements CommandExecutor {
             return false;
         }
         Town town = res.getTownOrNull();
+        MetaData mdInstance = MetaData.getInstance();
 
         assert town != null;
         if(args[0].equalsIgnoreCase("clear")){
-            setResourcePackLink(town, "clear");
+            mdInstance.setResourcePackLink(town, "clear");
             sender.sendMessage("§6[Towny Resource Packs] §eSuccessfully cleared your town's resource pack!");
             return true;
         }
 
-        setResourcePackLink(town, args[0]);
+        mdInstance.setResourcePackLink(town, args[0]);
         sender.sendMessage("§6[Towny Resource Packs] §eYou have successfully set your town's resource pack!\n§eYou may have to exit and re-enter your claims for the resource pack to set!");
         return true;
     }

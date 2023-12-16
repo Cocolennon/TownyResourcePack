@@ -2,7 +2,9 @@ package me.cocolennon.townyresourcepacks.listeners;
 
 import com.palmergames.bukkit.towny.event.player.PlayerEntersIntoTownBorderEvent;
 import com.palmergames.bukkit.towny.object.Town;
+import com.palmergames.bukkit.towny.object.metadata.StringDataField;
 import com.palmergames.bukkit.towny.utils.MetaDataUtil;
+import me.cocolennon.townyresourcepacks.utils.metadata.MetaData;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,10 +13,9 @@ import org.bukkit.persistence.PersistentDataContainer;
 import me.cocolennon.townyresourcepacks.Main;
 import org.bukkit.persistence.PersistentDataType;
 
-import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.getResourcePackLink;
-import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.resourcePackLink;
-
 public class PlayerEnterTown implements Listener {
+    StringDataField resourcePackLink = MetaData.getInstance().resourcePackLink;
+
     @EventHandler
     public void onEnterTown(PlayerEntersIntoTownBorderEvent event){
         Player player = event.getPlayer();
@@ -24,11 +25,12 @@ public class PlayerEnterTown implements Listener {
 
         String resourcePackURL = "clear";
         if(MetaDataUtil.hasMeta(town, resourcePackLink)){
-            resourcePackURL = getResourcePackLink(town);
+            resourcePackURL = MetaData.getInstance().getResourcePackLink(town);
         }
 
         if(resourcePackURL.equals("clear")){
-            player.setResourcePack("https://www.curseforge.com/api/v1/mods/457153/files/4572162/download"); // This is the default Minecraft 1.20 resource pack
+            String defaultPack = Main.getInstance().getConfig().getString("default-resource-pack");
+            player.setResourcePack(defaultPack);
         }
 
         player.setResourcePack(resourcePackURL);

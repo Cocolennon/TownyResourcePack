@@ -18,7 +18,8 @@ public class PlayerExitTown implements Listener {
         if(!container.has(key, PersistentDataType.STRING)) container.set(key, PersistentDataType.STRING, "false");
         if(container.get(key, PersistentDataType.STRING).equals("false")) return;
 
-        player.setResourcePack("https://www.curseforge.com/api/v1/mods/457153/files/4572162/download"); // This is the default Minecraft 1.20 resource pack
+        String defaultPack = Main.getInstance().getConfig().getString("default-resource-pack");
+        player.setResourcePack(defaultPack);
         container.set(key, PersistentDataType.STRING, "true");
 
     }
