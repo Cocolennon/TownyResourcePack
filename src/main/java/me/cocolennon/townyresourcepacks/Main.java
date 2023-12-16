@@ -11,6 +11,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main extends JavaPlugin {
     public static Main instance;
@@ -42,7 +43,7 @@ public class Main extends JavaPlugin {
 
     private void setupConfig() {
         config.addDefault("default-resource-pack", "https://www.curseforge.com/api/v1/mods/457153/files/4572162/download");
-        config.options().setHeader(Arrays.asList("default-resource-pack: The resource pack that will be used when a player is outside of a town"));
+        config.options().setHeader(List.of("default-resource-pack: The resource pack that will be used when a player is outside of a town"));
         config.options().copyDefaults(true);
         saveConfig();
     }
