@@ -14,7 +14,10 @@ public class PlayerExitTown implements Listener {
     public void onLeaveTown(PlayerExitsFromTownBorderEvent event){
         Player player = event.getPlayer();
         NamespacedKey key = new NamespacedKey(Main.getInstance(), "has-resource-pack");
+        NamespacedKey toggle = new NamespacedKey(Main.getInstance(), "toggle-resource-packs");
         PersistentDataContainer container = player.getPersistentDataContainer();
+
+        if(container.has(toggle, PersistentDataType.BOOLEAN) && !container.get(toggle, PersistentDataType.BOOLEAN)) return;
         if(!container.has(key, PersistentDataType.STRING)) container.set(key, PersistentDataType.STRING, "false");
         if(container.get(key, PersistentDataType.STRING).equals("false")) return;
 

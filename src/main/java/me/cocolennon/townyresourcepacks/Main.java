@@ -3,6 +3,7 @@ package me.cocolennon.townyresourcepacks;
 import com.palmergames.bukkit.towny.TownyCommandAddonAPI;
 import com.palmergames.bukkit.towny.TownyCommandAddonAPI.CommandType;
 import me.cocolennon.townyresourcepacks.commands.CommandResourcePack;
+import me.cocolennon.townyresourcepacks.commands.TogglePacksCommand;
 import me.cocolennon.townyresourcepacks.listeners.PlayerEnterTown;
 import me.cocolennon.townyresourcepacks.listeners.PlayerExitTown;
 import me.cocolennon.townyresourcepacks.listeners.PlayerJoined;
@@ -49,6 +50,7 @@ public class Main extends JavaPlugin {
 
     private void registerCommands(){
         TownyCommandAddonAPI.addSubCommand(CommandType.TOWN_SET, "resource-pack", new CommandResourcePack());
+        getCommand("toggle-resource-packs").setExecutor(new TogglePacksCommand());
     }
 
     private void registerListeners() {

@@ -21,7 +21,10 @@ public class PlayerEnterTown implements Listener {
         Player player = event.getPlayer();
         Town town = event.getEnteredTown();
         NamespacedKey key = new NamespacedKey(Main.getInstance(), "has-resource-pack");
+        NamespacedKey toggle = new NamespacedKey(Main.getInstance(), "toggle-resource-packs");
         PersistentDataContainer container = player.getPersistentDataContainer();
+
+        if(container.has(toggle, PersistentDataType.BOOLEAN) && !container.get(toggle, PersistentDataType.BOOLEAN)) return;
 
         String resourcePackURL = "clear";
         if(MetaDataUtil.hasMeta(town, resourcePackLink)){
