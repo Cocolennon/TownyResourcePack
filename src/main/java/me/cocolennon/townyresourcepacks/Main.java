@@ -35,7 +35,7 @@ public class Main extends JavaPlugin {
             version = this.getDescription().getVersion();
             latestVersion = cVersion;
             if (!getVersion().equals(cVersion)) {
-                getLogger().info("You are using an older version of Top Luck, please update to version " + cVersion);
+                getLogger().info("You are using an older version of Towny Resource Packs, please update to version " + cVersion);
                 usingOldVersion = true;
             }
         });
