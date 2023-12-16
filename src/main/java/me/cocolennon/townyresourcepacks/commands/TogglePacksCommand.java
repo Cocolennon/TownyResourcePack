@@ -1,7 +1,6 @@
 package me.cocolennon.townyresourcepacks.commands;
 
 import me.cocolennon.townyresourcepacks.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
