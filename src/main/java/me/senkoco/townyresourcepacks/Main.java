@@ -13,16 +13,19 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Plugin enabled!");
-        registerCommandsAndListeners();
+        registerCommands();
+        registerListeners();
 
         instance = this;
     }
 
-    private void registerCommandsAndListeners(){
+    private void registerCommands(){
         TownyCommandAddonAPI.addSubCommand(CommandType.TOWN_SET, "resource-pack", new CommandResourcePack());
+    }
+
+    private void registerListeners() {
         getServer().getPluginManager().registerEvents(new PlayerExitTown(), this);
         getServer().getPluginManager().registerEvents(new PlayerEnterTown(), this);
     }
-
     public static Main getInstance() { return instance; }
 }
