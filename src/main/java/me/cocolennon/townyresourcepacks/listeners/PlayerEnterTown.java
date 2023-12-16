@@ -1,4 +1,4 @@
-package me.senkoco.townyresourcepacks.listeners;
+package me.cocolennon.townyresourcepacks.listeners;
 
 import com.palmergames.bukkit.towny.event.player.PlayerEntersIntoTownBorderEvent;
 import com.palmergames.bukkit.towny.object.Town;
@@ -8,11 +8,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.persistence.PersistentDataContainer;
-import me.senkoco.townyresourcepacks.Main;
+import me.cocolennon.townyresourcepacks.Main;
 import org.bukkit.persistence.PersistentDataType;
 
-import static me.senkoco.townyresourcepacks.utils.metadata.MetaData.getResourcePackLink;
-import static me.senkoco.townyresourcepacks.utils.metadata.MetaData.resourcePackLink;
+import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.getResourcePackLink;
+import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.resourcePackLink;
 
 public class PlayerEnterTown implements Listener {
     @EventHandler

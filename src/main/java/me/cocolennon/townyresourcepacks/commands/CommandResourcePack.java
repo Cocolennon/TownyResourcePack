@@ -1,4 +1,4 @@
-package me.senkoco.townyresourcepacks.commands;
+package me.cocolennon.townyresourcepacks.commands;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static me.senkoco.townyresourcepacks.utils.metadata.MetaData.setResourcePackLink;
+import static me.cocolennon.townyresourcepacks.utils.metadata.MetaData.setResourcePackLink;
 
 public class CommandResourcePack implements CommandExecutor {
     @Override

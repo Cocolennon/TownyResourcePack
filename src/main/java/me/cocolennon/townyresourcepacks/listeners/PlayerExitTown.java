@@ -1,7 +1,7 @@
-package me.senkoco.townyresourcepacks.listeners;
+package me.cocolennon.townyresourcepacks.listeners;
 
 import com.palmergames.bukkit.towny.event.player.PlayerExitsFromTownBorderEvent;
-import me.senkoco.townyresourcepacks.Main;
+import me.cocolennon.townyresourcepacks.Main;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

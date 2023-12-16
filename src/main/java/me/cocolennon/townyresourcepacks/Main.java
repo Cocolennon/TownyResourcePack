@@ -1,10 +1,10 @@
-package me.senkoco.townyresourcepacks;
+package me.cocolennon.townyresourcepacks;
 
 import com.palmergames.bukkit.towny.TownyCommandAddonAPI;
 import com.palmergames.bukkit.towny.TownyCommandAddonAPI.CommandType;
-import me.senkoco.townyresourcepacks.commands.CommandResourcePack;
-import me.senkoco.townyresourcepacks.listeners.PlayerEnterTown;
-import me.senkoco.townyresourcepacks.listeners.PlayerExitTown;
+import me.cocolennon.townyresourcepacks.commands.CommandResourcePack;
+import me.cocolennon.townyresourcepacks.listeners.PlayerEnterTown;
+import me.cocolennon.townyresourcepacks.listeners.PlayerExitTown;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

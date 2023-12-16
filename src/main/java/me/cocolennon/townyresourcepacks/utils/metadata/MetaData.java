@@ -1,4 +1,4 @@
-package me.senkoco.townyresourcepacks.utils.metadata;
+package me.cocolennon.townyresourcepacks.utils.metadata;
 
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.metadata.StringDataField;
