@@ -5,6 +5,9 @@ main: me.cocolennon.townyresourcepacks.Main
 version: 1.0.0
 api-version: 1.19
 depend: [Towny]
+commands:
+  toggle-resource-packs:
+    description: Toggles whether a resource pack will be set when entering a town's borders
 permissions:
   townyresourcepacks.set:
     description: Allows a town's mayor to set its resource pack
