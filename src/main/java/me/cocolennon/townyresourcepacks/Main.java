@@ -5,6 +5,7 @@ import com.palmergames.bukkit.towny.TownyCommandAddonAPI.CommandType;
 import me.cocolennon.townyresourcepacks.commands.CommandResourcePack;
 import me.cocolennon.townyresourcepacks.listeners.PlayerEnterTown;
 import me.cocolennon.townyresourcepacks.listeners.PlayerExitTown;
+import me.cocolennon.townyresourcepacks.listeners.PlayerJoined;
 import me.cocolennon.townyresourcepacks.utils.UpdateChecker;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -53,6 +54,7 @@ public class Main extends JavaPlugin {
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new PlayerExitTown(), this);
         getServer().getPluginManager().registerEvents(new PlayerEnterTown(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoined(), this);
     }
 
     public String getVersion() { return version; }
